@@ -1,0 +1,169 @@
+@charset "utf-8";
+
+/*--------------------------------------------------
+reset, skip, font
+---------------------------------------------------*/
+/*font*/
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+
+/*reset*/
+:root {
+    --Blue-blue_main_7: #051135;
+    --Gray-Gray_2: #D4D4D4
+}   
+/*margin, padding reset*/
+body,html{
+	height:100%;
+	width:100%;
+	overflow-x:hidden;
+    background: #F5F6FA;
+}
+body, div, ul, ol, li, dl, dd, dt, p, select, input, button, form, fieldset, legend, textarea, figure, figcaption, table, th, tr, td {
+    margin: 0px; 
+    padding: 0px;
+    border: none;
+    overflow: hidden; 
+    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    line-height: 1.5;
+}
+
+/*table reset*/
+table, th, tr, td {
+    border-spacing: 0; 
+    border-collapse: collapse; 
+} 
+	
+/*font reset*/	
+h1, h2, h3, h4, h5, h6 {
+    margin: 0; 
+    padding: 0; 
+    height: 0px; 
+    font-size:0px; 
+    line-height:0px; 
+}
+	
+/*img reset*/
+img {
+    margin: 0; 
+    padding: 0; 
+    border: none;
+    vertical-align: middle;
+}
+
+/*link reset*/
+ /*링크 클릭시 생기는 점선제거  a{selector-dummy: expression(this.hideFocus=true);}*/
+a, a:link, a:visited, a:active, a:hover {
+    text-decoration:none;
+}
+/*--------------------------------------------------
+popup
+---------------------------------------------------*/
+.container {
+    width: 100vw;
+    height: 100vh;
+    flex: 1; /* 나머지 공간을 모두 차지하도록 설정 */
+    display: flex;
+    flex-direction: column;
+}
+.header {
+    width: 100vw;
+    height: 72px;
+    background: var(--Blue-blue_main_7);
+}
+.content {
+    width: 100vw;
+    padding: 20px 20px 0px 20px;
+    box-sizing:border-box;
+    flex: 1; /* 나머지 공간을 모두 차지하도록 설정 */
+    display: flex;
+    flex-direction: column;
+
+}
+.content-wrap {
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid var(--Gray-Gray_2);
+    flex: 1; /* 남은 공간을 모두 차지하도록 설정 */
+    display: flex;
+}
+.b-padding {
+    padding-bottom: 20px;
+}
+.header-wrap {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 26px 30px;
+}
+.header-title h1 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #fff;   
+}
+/*버튼 영역*/
+.btn {
+    height: 40px;
+    margin: 16px 20px 0px 0px;
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+}
+.btn .btn-enable {
+    cursor: pointer;
+    width: 130px;
+    height: 40px;
+    border-radius: 5px;
+    background: var(--Blue-blue_main_7);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400px;
+}
+.btn button:last-child{
+    cursor: pointer;
+    width: 130px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid var(--Blue-blue_main_7);
+    font-size: 18px;
+    font-weight: 400px;
+}
+.btn-disable {
+    cursor: pointer;
+    width: 130px;
+    height: 40px;
+    border-radius: 5px;
+    background-color: var(--Gray-Gray_2);
+    color: #fff;
+    font-size: 18px;
+    font-weight: 400px;   
+}
+/*항목영역*/
+.grid-aside {
+    width: 220px;
+    height: 100%;
+    border-right: 1px solid var(--Gray-Gray_2);
+}
+.grid-content {
+    width: 100%;
+}
+.grid-title {
+    height: 48px;
+    border-bottom: 1px solid var(--Gray-Gray_2);
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    justify-content: space-between;
+}
+.grid-title h2 {
+    font-size: 18px;
+    font-weight: 600;  
+}
+.grid-filter-wrap {
+    width: 100%;
+    height: auto;
+    background: #000;
+    display: flex;
+}
+.grid-tree {
+    padding: 16px;
+}
