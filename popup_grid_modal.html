@@ -166,6 +166,12 @@
         }
 
         document.querySelector('.close button').addEventListener('click', closeAlert);
+
+        // 드롭다운 토글 함수
+        function toggleDropdown() {
+            var dropdown = document.querySelector('.status-dropdown');
+            dropdown.classList.toggle('open');
+        }
     </script> 
 </body>
 
