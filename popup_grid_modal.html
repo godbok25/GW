@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제목</title>
+    <link rel="stylesheet" href="css/popup.css">
+    <link rel="stylesheet" href="css/tree-menu.css">
+    <style>
+        .p-menu {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .container {
+            width: 1300px;
+            height: 800px;
+        }
+ 
+    </style>
+</head>
+
+<body>  
+    <div> 
+        <button class="p-menu" onclick="openAlert()">공통팝업</button>
+    </div>
+    <div class="overlay" id="overlay"></div>
+    <div class="container" id="c-alert">
+        <header class="header">
+            <div class="header-title">제목</div>
+            <div class="close"><button><img src="img/Close.svg" alt="닫기"></button></div>
+        </header><!--//header-->
+        <section class="content">
+            <!--내용 영역-->
+            <div class="content-wrap">
+                <!--트리메뉴영역 추가/삭제-->
+                <div class="grid-aside">
+                    <!--grid title-->
+                    <div class="grid-title">
+                        <div class="grid-title-text">그룹</div>
+                        <!--필터버튼의 수정/삭제-->
+                        <div class="top-icon-wrap">
+                            <div class="top-icon">
+                                <a href="#" class="top-icon-img">
+                                    <img src="./img/top_icon_menu.svg" alt="Button Image">
+                                </a>
+                            </div>
+                        </div>                        <!--top-icon-wrap-->
+                    </div><!--//grid-title-->
+                    <div class="grid-tree">
+                        <!-- 트리메뉴 -->
+                        menu
+                    </div><!--//grid-tree-->
+                </div><!--//grid-aside-->
+                <div class="grid-content">
+                    <div class="grid-title">
+                        <div class="grid-title-text">사용자 목록</div>
+                        <div class="grid-title-wrap">
+                            <span class="grid-filter">
+                                <span class="status-filter-wrap">
+                                    <label for="status-filter" class="filter-label">상태</label>
+                                    <!-- 드롭다운 메뉴 disable
+                                    <div class="status-dropdown">
+                                        <div class="status-dropdown-text disable-color">전체</div>
+                                        <img class="status-dropdown-arrow" src="img/dropdown_disable.svg" alt="Dropdown Arrow">
+                                    </div> -->
+                                    <!-- 드롭다운 메뉴 enable -->
+                                    <span class="status-dropdown" onclick="toggleDropdown()">
+                                        <div class="status-dropdown-text">전체</div>
+                                        <img class="status-dropdown-arrow" src="img/dropdown.svg" alt="Dropdown Arrow">
+                                        <ul class="status-dropdown-list">
+                                            <li class="status-dropdown-item">Option 1</li>
+                                            <li class="status-dropdown-item">Option 2</li>
+                                            <li class="status-dropdown-item">Option 3</li>
+                                        </ul>
+                                    </span>
+                                </span>
+                                <div class="serch-input-wrap">
+                                    <label for="search-input" class="filter-label">검색</label>
+                                    <input type="text" id="search-input" class="search-input" placeholder="검색어를 입력하세요">
+                                    <!-- 검색 enable-->
+                                    <!-- <input type="text" id="search-input" class="search-input disable-color" placeholder="검색어를 입력하세요"> -->
+                                    <button class="search-button" type="submit"></button>
+                                </div>
+                            </span>
+                        </div>
+                        <!--탑아이콘 수정/삭제-->
+                        <div class="top-icon-menu">
+                            <!--필터 아이콘 메뉴-->
+                            <div class="top-icon">
+                                <a href="#" class="top-icon-img">
+                                    <img src="./img/top_icon_menu.svg" alt="Button Image">
+                                </a>
+                            </div>
+                            <div class="top-icon">
+                                <a href="#" class="top-icon-img">
+                                    <img src="./img/top_icon_grouping.svg" alt="Button Image">
+                                </a>
+                            </div>
+                            <div class="top-icon">
+                                <a href="#" class="top-icon-img">
+                                    <img src="./img/top_icon_filter.svg" alt="Button Image">
+                                </a>
+                            </div>
+                            <div class="top-icon">
+                                <a href="#" class="top-icon-img">
+                                    <img src="./img/top_icon_renewal.svg" alt="Button Image">
+                                </a>
+                            </div>
+                            <div class="top-icon">
+                                <a href="#" class="top-icon-img">
+                                    <img src="./img/top_icon_cloumn.svg" alt="Button Image">
+                                </a>
+                            </div>
+                            <!--//필터 아이콘 메뉴 end-->
+                            <!--추가/삭제 아이콘 메뉴
+                            <div class="top-icon">
+                                <a href="#" class="top-icon-img blue">
+                                    <img src="./img/top_icon_add.svg" alt="Button Image">
+                                </a>
+                            </div>                          
+                            <div class="top-icon">
+                                <a href="#" class="top-icon-img red">
+                                    <img src="./img/top_icon_del.svg" alt="Button Image">
+                                </a>
+                            </div>                          
+                            <div class="top-icon">
+                                <a href="#" class="top-icon-img">
+                                    <img src="./img/top_icon_edit.svg" alt="Button Image">
+                                </a>
+                            </div>-->                          
+                        </div>
+                        <!--top-icon-->
+                    </div><!--//grid-title-->
+                    <div class="grid-list">
+                        <!--내용-->
+                        <div class="grid-list">
+                            <!--내용-->
+                            <table>
+                                <colgroup>
+                                    <col class="col-5">
+                                    <col class="col-7">
+                                    <col class="col-7">
+                                    <col class="col-7">
+                                    <col class="col-7">
+                                    <col class="col-7">
+                                    <col class="col-7">
+                                    <col class="col-7">
+                                    <col class="col-20">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>No.</th>
+                                        <th>사용</th>
+                                        <th>이동</th>
+                                        <th>비번</th>
+                                        <th>이름</th>
+                                        <th>날짜</th>
+                                        <th>가격</th>
+                                        <th>휴가일수</th>
+                                        <th>내용</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-right">111</td>
+                                        <td>
+                                            <input type="checkbox" class="custom-checkbox">
+                                        </td>
+                                        <td class="center"><img src="./img/move.svg" alt=""></td>
+                                        <td class="center"><img src="./img/OX_X.svg" alt=""></td>
+                                        <td class="text-left">을지문덕</td>
+                                        <td class="text-left">2024-05-20</td>
+                                        <td class="text-right">1,000,000</td>
+                                        <td class="text-right">15일</td>
+                                        <td class="text-left">숫자, 금액, 단위 우측정렬</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-right">2</td>
+                                        <td class="center"><input type="checkbox" class="custom-checkbox"></td>
+                                        <td class="center"><img src="./img/move.svg" alt=""></td>
+                                        <td class="center"><img src="./img/OX_O.svg" alt=""></td>
+                                        <td class="text-left">이순신</td>
+                                        <td class="text-left">2024-05-20</td>
+                                        <td class="text-right">1,000,000</td>
+                                        <td class="text-right">15일</td>
+                                        <td class="text-left">숫자, 금액, 단위 우측정렬</td>
+                                    </tr>
+                                    <tr class="last-row">
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!--//내용 -->
+                        </div><!--//grid-list-->       
+                        <!--//내용 -->
+                    </div><!--//grid-list-->
+                </div>
+                <!--//grid-content-->
+            </div><!--//content-wrap-->
+        </section>
+        <!--content-->
+        <div class="b-padding">
+            <!--버튼 영역 추가/삭제-->
+            <div class="btn">
+                <!-- <button class="btn-disable">저장</button>  -->
+                <!--disable 상태-->
+                <button class="btn-enable">저장</button>
+                <!--enable 상태-->
+                <button onclick="window.close();">닫기</button>
+            </div>
+        </div>    
+    </div><!--//container-->
+    
+    <script>
+        function openAlert() {
+            document.getElementById('c-alert').style.display = 'flex';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function closeAlert() {
+            document.getElementById('c-alert').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        document.querySelector('.close button').addEventListener('click', closeAlert);
+        // 드롭다운 토글 함수
+        function toggleDropdown() {
+            var dropdown = document.querySelector('.status-dropdown');
+            dropdown.classList.toggle('open');
+        }
+    </script> 
+</body>
+
+</html>
