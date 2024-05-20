@@ -36,7 +36,7 @@
                 <!--트리메뉴영역 추가/삭제-->
                 <div class="grid-aside">
                     <!--grid title-->
-                    <div class="gird-title">
+                    <div class="grid-title">
                         <div class="grid-title-text">그룹</div>
                         <!--필터버튼의 수정/삭제-->
                         <div class="top-icon-wrap">
@@ -53,7 +53,7 @@
                     </div><!--//grid-tree-->
                 </div><!--//grid-aside-->
                 <div class="grid-content">
-                    <div class="gird-title">
+                    <div class="grid-title">
                         <div class="grid-title-text">사용자 목록</div>
                         <div class="grid-title-wrap">
                             <span class="grid-filter">
@@ -134,7 +134,73 @@
                     </div><!--//grid-title-->
                     <div class="grid-list">
                         <!--내용-->
-         
+                        <div class="grid-list">
+                            <!--내용-->
+                            <table>
+                                <colgroup>
+                                    <col class="col-5">
+                                    <col class="col-7">
+                                    <col class="col-7">
+                                    <col class="col-7">
+                                    <col class="col-7">
+                                    <col class="col-7">
+                                    <col class="col-7">
+                                    <col class="col-7">
+                                    <col class="col-20">
+                                </colgroup>
+                                <thead>
+                                    <tr>
+                                        <th>No.</th>
+                                        <th>사용</th>
+                                        <th>이동</th>
+                                        <th>비번</th>
+                                        <th>이름</th>
+                                        <th>날짜</th>
+                                        <th>가격</th>
+                                        <th>휴가일수</th>
+                                        <th>내용</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-right">111</td>
+                                        <td>
+                                            <input type="checkbox" class="custom-checkbox">
+                                        </td>
+                                        <td class="center"><img src="./img/move.svg" alt=""></td>
+                                        <td class="center"><img src="./img/OX_X.svg" alt=""></td>
+                                        <td class="text-left">을지문덕</td>
+                                        <td class="text-left">2024-05-20</td>
+                                        <td class="text-right">1,000,000</td>
+                                        <td class="text-right">15일</td>
+                                        <td class="text-left">숫자, 금액, 단위 우측정렬</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="text-right">2</td>
+                                        <td class="center"><input type="checkbox" class="custom-checkbox"></td>
+                                        <td class="center"><img src="./img/move.svg" alt=""></td>
+                                        <td class="center"><img src="./img/OX_O.svg" alt=""></td>
+                                        <td class="text-left">이순신</td>
+                                        <td class="text-left">2024-05-20</td>
+                                        <td class="text-right">1,000,000</td>
+                                        <td class="text-right">15일</td>
+                                        <td class="text-left">숫자, 금액, 단위 우측정렬</td>
+                                    </tr>
+                                    <tr class="last-row">
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!--//내용 -->
+                        </div><!--//grid-list-->       
                         <!--//내용 -->
                     </div><!--//grid-list-->
                 </div>
@@ -166,7 +232,6 @@
         }
 
         document.querySelector('.close button').addEventListener('click', closeAlert);
-
         // 드롭다운 토글 함수
         function toggleDropdown() {
             var dropdown = document.querySelector('.status-dropdown');
