@@ -79,11 +79,16 @@ popup
     z-index: 999;
 }
 .container {
-    width: 100vw;
-    height: 100vh;
-    flex: 1; /* 나머지 공간을 모두 차지하도록 설정 */
-    display: flex;
-    flex-direction: column;
+    flex-direction: column; 
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    display: none;
+    border: none;
+    z-index: 1000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    resize: both;
+    position: relative;
 }
 .header {
     width: 100%;
@@ -220,7 +225,7 @@ popup
 grid title
 ---------------------------------------------------*/
 /*그리드 타이틀과 검색, 필터*/
-.gird-title {
+.grid-title {
     border-bottom: 1px solid var(--Gray-Gray_2);
     padding: 12px 20px 12px 20px;
     display: flex;
@@ -420,4 +425,104 @@ grid title
 }
 .top-icon-img:hover,.top-icon-img:active {
     background: var(--Blue-blue_6);
+}
+/*--------------------------------------------------
+grid
+---------------------------------------------------*/
+.grid-list {
+    height: 100%;
+}
+/* 테이블 스타일 */
+table {
+    width: 100%;
+    height: 100%;
+}    
+th, td {
+    border: 1px solid var(--Gray-Gray_2);
+    text-align: center;
+    vertical-align: middle;
+}
+th {
+    background: var(--Grid-grid_top);
+    height: 30px;
+    font-size: 14px;
+    color: var(--Gray-Gray_5);
+    font-weight: 500;
+    border-top: none;
+}
+td {
+    font-size: 13px;
+    font-weight: 400;
+    height: 26px;
+    padding: 0 10px !important;
+    vertical-align: middle;
+}
+th:first-child, td:first-child {
+    border-left: none;
+} 
+th:last-child, td:last-child {
+    border-right: none;
+} 
+tr:hover td {
+    background-color: #f0f0f0;
+}
+td img, td input[type="checkbox"] {
+    display: block;
+    margin: 0 auto;
+}
+
+tr:last-child:hover td {
+    background-color: inherit;
+}
+.text-right {
+    text-align: right;
+}
+.text-center {
+    text-align: center;
+}
+.text-left {
+    text-align: left;
+    padding: 0 10px; 
+}
+.col-5 { width: 5%; }
+.col-7 { width: 7%; }
+.col-10 { width: 10%; }
+.col-20 { width: 20%; }
+.col-30 { width: 30%; }
+.last-row {
+    height:100%;
+}
+.last-row td {
+    vertical-align: top;
+} 
+
+/*체크박스 스타일*/
+.custom-checkbox {
+    width: 16px;
+    height: 16px;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 2px;
+    border: 1px solid var(--Blue-blue_6);
+    position: relative;
+}
+
+.custom-checkbox:checked {
+    background-color: var(--Blue-blue_6);
+    border: none;
+}
+
+.custom-checkbox:checked::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 16px; 
+    height: 16px;
+    background-image: url('../img/check_mark.svg');
+    background-size: cover;
+    transform: translate(-50%, -50%);
 }
