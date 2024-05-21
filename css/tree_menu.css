@@ -1,0 +1,63 @@
+.tree {
+    margin-bottom: 10px;
+    background: #fff;
+}
+.tree ul,.tree li,.tree span {
+    margin: 0;
+    padding: 0;
+}
+.tree li a {
+    display: flex; /* Flexbox를 사용하여 이미지와 텍스트를 나란히 배치 */
+    align-items: center; /* 이미지와 텍스트를 수직으로 가운데 정렬 */
+    color: var(--Gray-Gray_5);
+    height: 26px; /* 높이 설정 */
+}
+
+.tree li a:hover {
+    color: #000;
+    background: var(--Blue-blue1); /* hover 시 배경색 설정 */
+}
+
+.tree .tree-icon {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px; /* 이미지와 텍스트 사이 간격 설정 */
+    vertical-align: top;
+}
+.tree .tree-icon img {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+}
+.tree ul {
+    background: url(../img/line.svg) repeat-y 9px 0;
+}
+.tree li {
+    padding-left: 25px;
+    background: url(../img/line_v.svg) no-repeat 9px -16px;
+}
+.tree li.tree_last_node {
+    background: url(../img/line_last.svg) no-repeat 9px -16px;
+}
+.tree-menu {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.8;
+}
+.tree-submenu,.tree-menu-2, .tree-submenu-2  {
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 2;
+}
+.tree-submenu-2 {
+    display: flex;
+    align-items: center;
+}
+.tree-menu-2 {
+    line-height: 2;
+}
+.tree-menu-2 img {
+    padding-right: 5px;
+}
