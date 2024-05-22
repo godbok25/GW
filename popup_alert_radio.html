@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제목</title>
+    <link rel="stylesheet" href="css/popup.css">
+    <link rel="stylesheet" href="css/alert.css">
+    <style>
+        .container {   
+            width: 500px;
+            height: 300px;
+        }
+        .p-menu {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <button class="p-menu" onclick="openAlert()"> Alert-라디오버튼</button>
+    </div>
+    <!--모달-->
+    <div class="overlay" id="overlay"></div>
+    
+    <div class="container" id="c-alert">
+        <header class="header">
+            <div class="header-title">Alert_라디오</div>
+            <div class="close"><button><img src="img/Close.svg" alt="닫기"></button></div>
+        </header><!--//header-->
+        <section class="a-content">
+            <div class="a-alert-wrap fiex-06" style="border: none">
+                <img src="./img/warning.svg" alt="">
+                <div class="a-alert">
+                    선택된 항목의 상태를 변경합니다.
+                </div>              
+            </div>
+            <!--라디오버튼 위치-->
+            <div class="radio-wrap fiex-04">
+                <ul>
+                    <li><input type="radio"> 재직</li>
+                    <li><input type="radio"> 퇴사</li>
+                    <li><input type="radio"> 삭제</li>
+                </ul>
+            </div>    
+        </section><!--//content-->
+        <div class="b-padding">
+            <!--버튼 영역 추가/삭제-->
+            <div class="btn">
+                 <!--disable 상태-->
+                 <!-- <button class="btn-disable">저장</button>  -->
+                <button class="btn-enable">적용</button>
+                <button onclick="closeAlert()">닫기</button>
+            </div>
+        </div>
+    </div><!--//container-->
+
+    <script>
+        function openAlert() {
+            document.getElementById('c-alert').style.display = 'flex';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function closeAlert() {
+            document.getElementById('c-alert').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        document.querySelector('.close button').addEventListener('click', closeAlert);
+    </script>
+</body>
+
+</html>

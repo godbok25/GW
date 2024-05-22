@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제목</title>
+    <link rel="stylesheet" href="css/popup.css">
+    <link rel="stylesheet" href="css/alert.css">
+    <style>
+        .container {    
+            width: 500px;
+            height: 300px;
+        }
+        .p-menu {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <button class="p-menu" onclick="openAlert()"> Alert_기본</button>
+    </div>
+    <!--모달-->
+    <div class="overlay" id="overlay"></div>
+    
+    <div class="container" id="c-alert">
+        <header class="header">
+            <div class="header-title">Alert_기본</div>
+            <div class="close"><button><img src="img/Close.svg" alt="닫기"></button></div>
+        </header><!--//header-->
+        <section class="a-content">
+            <div class="a-alert-wrap" style="border: none">
+                <img src="./img/warning.svg" alt="">
+                <div class="a-alert">
+                    선택된 대상(들)의 사용자 패스워드를 <br>
+                    초기화 하시겠습니까?<br>
+                    <p>환경설정 기본패스워드 값으로 적용됩니다.</p> 
+                </div>              
+            </div>
+
+        </section><!--//content-->
+        <div class="b-padding">
+            <!--버튼 영역 추가/삭제-->
+            <div class="btn">
+                 <!--disable 상태-->
+                 <!-- <button class="btn-disable">저장</button>  -->
+                <button class="btn-enable">예</button>
+                <button onclick="closeAlert()">아니요</button>
+            </div>
+        </div>
+    </div><!--//container-->
+
+    <script>
+        function openAlert() {
+            document.getElementById('c-alert').style.display = 'flex';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function closeAlert() {
+            document.getElementById('c-alert').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        document.querySelector('.close button').addEventListener('click', closeAlert);
+    </script>
+</body>
+
+</html>
