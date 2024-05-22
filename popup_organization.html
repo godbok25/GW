@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제목</title>
+    <link rel="stylesheet" href="css/popup.css">
+    <link rel="stylesheet" href="css/tree_menu.css">
+    <link rel="stylesheet" href="css/popup_organization.css">
+    <style>
+        /*해당스타일은 조직도에 위치해야 하며, 크기 및 위치 지정*/
+        .container {
+            width: 400px;
+            height: 740px
+        }
+        .p-menu {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+
+<body>  
+    <div> 
+        <button class="p-menu" onclick="openAlert()">조직도</button>
+    </div>
+    <div class="overlay" id="overlay"></div>
+    <div class="container" id="c-alert">
+        <header class="header">
+            <div class="header-title">조직도</div>
+            <div class="close"><button><img src="img/Close.svg" alt="닫기"></button></div>
+        </header><!--//header-->
+        <section class="content">
+            <!--내용 영역-->
+            <div class="content-wrap border-n">
+                <div class="grid-content">
+                    <div class="border-y">
+                    <div class="grid-title">
+                        <div class="grid-title-wrap">
+                                <div class="serch-input-wrap">
+                                    <label for="search-input" class="filter-label">검색</label>
+                                    <input type="text" id="search-input" class="search-input" placeholder="검색해 주세요">
+                                    <!-- 검색 enable-->
+                                    <!-- <input type="text" id="search-input" class="search-input disable-color" placeholder="검색어를 입력하세요"> -->
+                                    <button class="search-button" type="submit"></button>
+                                </div>
+                        </div>
+                    </div><!--//grid-title-->     
+                    <div class="grid-tree">
+                        <!--트리메뉴-->
+                        <div class="tree" style="height: 270px;">
+                            <div class="tree-menu">
+                                <span class="tree-icon"><img src="img/icon_file_open.svg" alt="folder"></span> (주)아이젝스
+                            </div>
+                            <ul>
+                                <li class="tree-menu-2"><img src="img/icon_file_open.svg" alt="folder"></span>경영지원
+                                    <ul>
+                                        <li class="tree-submenu-2"><a href="#" class="tree_label"><span class="tree-icon"><img src="img/icon_document.svg" alt="" height="16" width="16"></span>파트1</a></li>
+                                        <li class="tree-submenu-2 tree_last_node"> <a href="#" class="tree_label"><span class="tree-icon"><img src="img/icon_document.svg" alt="" height="16" width="16"></span>파트2</a></li>
+                                    </ul>
+                                </li>
+                                <li class="tree-menu-2"><img src="img/icon_file_open.svg" alt="folder"></span>솔루션사업부
+                                    <ul>
+                                        <li class="tree-submenu-2"><a href="#" class="tree_label"><span class="tree-icon"><img src="img/icon_document.svg" alt="" height="16" width="16"></span>파트1</a></li>
+                                        <li class="tree-submenu-2 tree_last_node"> <a href="#" class="tree_label"><span class="tree-icon"><img src="img/icon_document.svg" alt="" height="16" width="16"></span>파트2</a></li>
+                                    </ul>
+                                </li>
+                                <li class="tree-menu-2 tree_last_node">
+                                    <img src="img/icon_file_close.svg" alt="folder"></span>솔루션사업부
+                                </li>
+                            </ul>
+                        </div><!--//tree-->
+                    </div><!--//grid-tree-->
+                </div>
+                    <div class="ogrid-title">
+                        <div class="ogrid-title-text">선택결과</div>
+                    </div><!--//grid-title-->
+                    <div class="grid-list-v">
+                        <!--내용-->
+                        <table class="border-y">
+                            <colgroup>
+                                <col class="col-5">
+                                <col class="col-7">
+                                <col class="col-7">
+                                <col class="col-20">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>사용</th>
+                                    <th>내용</th>
+                                    <th>이름</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-right">111</td>
+                                    <td><input type="checkbox" class="custom-checkbox"></td>
+                                    <td class="text-left">사장</td>
+                                    <td class="text-left">을지문덕</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">2</td>
+                                    <td class="center"><input type="checkbox" class="custom-checkbox"></td>
+                                    <td class="text-left">부장</td>
+                                    <td class="text-left">을지문덕</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">2</td>
+                                    <td class="center"><input type="checkbox" class="custom-checkbox"></td>
+                                    <td class="text-left">부장</td>
+                                    <td class="text-left">을지문덕</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">2</td>
+                                    <td class="center"><input type="checkbox" class="custom-checkbox"></td>
+                                    <td class="text-left">부장</td>
+                                    <td class="text-left">을지문덕</td>
+                                </tr>
+                                <tr class="last-row">
+                                    <td ></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!--//내용 -->
+                    </div><!--//grid-list--> 
+                 </div>
+                <!--//grid-content-->
+                
+            </div><!--//content-wrap-->
+        </section>
+        <!--content-->
+        <div class="b-padding">
+            <!--버튼 영역 추가/삭제-->
+            <div class="btn">
+                <!-- <button class="btn-disable" style="width: 100px;">저장</button>  -->
+                <!--disable 상태-->
+                <button class="btn-enable" style="width: 100px;">적용</button>
+                <!--enable 상태-->
+                <button onclick="window.close();" style="width: 100px;">닫기</button>
+            </div>
+        </div>    
+    </div><!--//container-->
+    
+    <script>
+        function openAlert() {
+            document.getElementById('c-alert').style.display = 'flex';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function closeAlert() {
+            document.getElementById('c-alert').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        document.querySelector('.close button').addEventListener('click', closeAlert);
+        // 드롭다운 토글 함수
+        function toggleDropdown() {
+            var dropdown = document.querySelector('.status-dropdown');
+            dropdown.classList.toggle('open');
+        }
+    </script> 
+</body>
+
+</html>
