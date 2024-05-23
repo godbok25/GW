@@ -1,0 +1,56 @@
+.tab {
+    width: 1340px;
+    margin: 0 auto;
+}
+.tab-header {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    /* justify-content: space-between; 우측 정렬됨*/
+    border: 1px solid var(--Gray-Gray_2);
+    border-bottom: 1px solid var(--Blue-blue_6);
+    background: #fff;
+}
+.tabs {
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px ;
+}
+.tab-title {
+    background: #fff;
+    color: #222;
+    cursor: pointer;
+    border-radius: 4px 4px 0px 0px;
+    border-top: 1px solid var(--Gray-Gray_2);
+    border-right: 1px solid var(--Gray-Gray_2);
+    border-left: 1px solid var(--Gray-Gray_2);
+    width: 100px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px 2px;
+}
+.tab-title:first-child {
+    margin-left: 0;
+}
+.tab-title.current {
+    background: var(--Blue-blue_6);
+    color: #fff;
+}
+.tab-content {
+    display: none;
+    background: #fff;
+    padding: 15px;
+}
+.tab-content.current {
+    display: inherit;
+}
+.controls {
+display: flex;
+align-items: center;
+}    
