@@ -8,14 +8,18 @@
     <link rel="stylesheet" href="css/popup.css">
     <link rel="stylesheet" href="css/tree_menu.css">
     <style>
+        .container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /*위젯과 충돌발생함. 모달의 위치 중앙정렬 popup.css에서는 주석처리했음*/
+            width: 1300px;
+            height: 800px
+        }
         .p-menu {
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
-        }
-        .container {
-            width: 1300px;
-            height: 800px;
         }
     </style>
 </head>
@@ -61,30 +65,30 @@
                                 <li class="tree-submenu tree_last_node"><a href=""><span class="tree_ico"><img src="img/icon_document.svg" alt="folder"></span>SUBMENU</a>
                                 </li>
                             </ul>
-                    </div>
-                    <div class="tree">
-                            <div class="tree-menu">
-                                <span class="tree_ico"><img src="img/icon_file_close.svg" alt="folder"></span> MENU2
-                            </div>
-                    </div>
-                    <div class="tree">
-                        <div class="tree-menu">
-                            <span class="tree_ico"><img src="img/icon_file_open.svg" alt="folder"></span> MENU3
                         </div>
-                        <ul>
-                            <li class="tree-submenu"><a href=""><span class="tree_ico"><img src="img/icon_document.svg" alt="folder"></span>SUBMENU</a>
-                            </li>
-                            <li class="tree-submenu"><a href=""><span class="tree_ico"><img src="img/icon_document.svg" alt="folder"></span>SUBMENU</a>
-                            </li>
-                            <li class="tree-submenu tree_last_node"><a href=""><span class="tree_ico"><img src="img/icon_document.svg" alt="folder"></span>SUBMENU</a>
-                            </li>
-                        </ul>
-                    </div>
+                        <div class="tree">
+                                <div class="tree-menu">
+                                    <span class="tree_ico"><img src="img/icon_file_close.svg" alt="folder"></span> MENU2
+                                </div>
+                        </div>
+                        <div class="tree">
+                            <div class="tree-menu">
+                                <span class="tree_ico"><img src="img/icon_file_open.svg" alt="folder"></span> MENU3
+                            </div>
+                            <ul>
+                                <li class="tree-submenu"><a href=""><span class="tree_ico"><img src="img/icon_document.svg" alt="folder"></span>SUBMENU</a>
+                                </li>
+                                <li class="tree-submenu"><a href=""><span class="tree_ico"><img src="img/icon_document.svg" alt="folder"></span>SUBMENU</a>
+                                </li>
+                                <li class="tree-submenu tree_last_node"><a href=""><span class="tree_ico"><img src="img/icon_document.svg" alt="folder"></span>SUBMENU</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div><!--//grid-tree-->
                 </div><!--//grid-aside-->
                 <div class="grid-content">
                     <div class="grid-title">
-                        <div class="grid-title-text">사용자 목록</div>
+                        <div class="grid-title-text">사용자목록
                         <div class="grid-title-wrap">
                             <span class="grid-filter">
                                 <span class="status-filter-wrap">
@@ -113,7 +117,8 @@
                                     <button class="search-button" type="submit"></button>
                                 </div>
                             </span>
-                        </div>
+                        </div><!--grid-title-wrap-->
+                    </div>
                         <!--탑아이콘 수정/삭제-->
                         <div class="top-icon-menu">
                             <!--필터 아이콘 메뉴-->
@@ -164,75 +169,71 @@
                     </div><!--//grid-title-->
                     <div class="grid-list">
                         <!--내용-->
-                        <div class="grid-list">
-                            <!--내용-->
-                            <table>
-                                <colgroup>
-                                    <col class="col-5">
-                                    <col class="col-7">
-                                    <col class="col-7">
-                                    <col class="col-7">
-                                    <col class="col-7">
-                                    <col class="col-7">
-                                    <col class="col-7">
-                                    <col class="col-7">
-                                    <col class="col-20">
-                                </colgroup>
-                                <thead>
-                                    <tr>
-                                        <th>No.</th>
-                                        <th>사용</th>
-                                        <th>이동</th>
-                                        <th>비번</th>
-                                        <th>이름</th>
-                                        <th>날짜</th>
-                                        <th>가격</th>
-                                        <th>휴가일수</th>
-                                        <th>내용</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="text-right">111</td>
-                                        <td>
-                                            <input type="checkbox" class="custom-checkbox">
-                                        </td>
-                                        <td class="center"><img src="./img/move.svg" alt=""></td>
-                                        <td class="center"><img src="./img/OX_X.svg" alt=""></td>
-                                        <td class="text-left">을지문덕</td>
-                                        <td class="text-left">2024-05-20</td>
-                                        <td class="text-right">1,000,000</td>
-                                        <td class="text-right">15일</td>
-                                        <td class="text-left">숫자, 금액, 단위 우측정렬</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="text-right">2</td>
-                                        <td class="center"><input type="checkbox" class="custom-checkbox"></td>
-                                        <td class="center"><img src="./img/move.svg" alt=""></td>
-                                        <td class="center"><img src="./img/OX_O.svg" alt=""></td>
-                                        <td class="text-left">이순신</td>
-                                        <td class="text-left">2024-05-20</td>
-                                        <td class="text-right">1,000,000</td>
-                                        <td class="text-right">15일</td>
-                                        <td class="text-left">숫자, 금액, 단위 우측정렬</td>
-                                    </tr>
-                                    <tr class="last-row">
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <!--//내용 -->
-                        </div><!--//grid-list-->       
+                        <table>
+                            <colgroup>
+                                <col class="col-5">
+                                <col class="col-7">
+                                <col class="col-7">
+                                <col class="col-7">
+                                <col class="col-7">
+                                <col class="col-7">
+                                <col class="col-7">
+                                <col class="col-7">
+                                <col class="col-20">
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>No.</th>
+                                    <th>사용</th>
+                                    <th>이동</th>
+                                    <th>비번</th>
+                                    <th>이름</th>
+                                    <th>날짜</th>
+                                    <th>가격</th>
+                                    <th>휴가일수</th>
+                                    <th>내용</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="text-right">111</td>
+                                    <td>
+                                        <input type="checkbox" class="custom-checkbox">
+                                    </td>
+                                    <td class="center"><img src="./img/move.svg" alt=""></td>
+                                    <td class="center"><img src="./img/OX_X.svg" alt=""></td>
+                                    <td class="text-left">을지문덕</td>
+                                    <td class="text-left">2024-05-20</td>
+                                    <td class="text-right">1,000,000</td>
+                                    <td class="text-right">15일</td>
+                                    <td class="text-left">숫자, 금액, 단위 우측정렬</td>
+                                </tr>
+                                <tr>
+                                    <td class="text-right">2</td>
+                                    <td class="center"><input type="checkbox" class="custom-checkbox"></td>
+                                    <td class="center"><img src="./img/move.svg" alt=""></td>
+                                    <td class="center"><img src="./img/OX_O.svg" alt=""></td>
+                                    <td class="text-left">이순신</td>
+                                    <td class="text-left">2024-05-20</td>
+                                    <td class="text-right">1,000,000</td>
+                                    <td class="text-right">15일</td>
+                                    <td class="text-left">숫자, 금액, 단위 우측정렬</td>
+                                </tr>
+                                <tr class="last-row">
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </tbody>
+                        </table>
                         <!--//내용 -->
-                    </div><!--//grid-list-->
+                    </div><!--//grid-list-->       
                 </div>
                 <!--//grid-content-->
             </div><!--//content-wrap-->
