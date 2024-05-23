@@ -12,7 +12,7 @@ reset, skip, font
     --Blue-blue_main_7: #051135;
     --Blue-blue1: #F1F6FB;
     --Gray-Gray_2: #D4D4D4; /*그리드 선 색상*/
-    --Gray-Gray_6: #333333; 
+    --Gray-Gray_6: #333333; /*alert 글자 색*/
     --Blue-blue_6: #134A9A;
     --Gray-Gray_4: #777777;
     --Red-Red_4: #D41E36;
@@ -35,6 +35,7 @@ body, div, ul, ol, li, dl, dd, dt, p, select, input, button, form, fieldset, leg
     overflow: hidden; /*****/
     font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
     line-height: 1.5;
+    color:#515151
 }
 
 /*table reset*/
@@ -231,6 +232,7 @@ grid title
 ---------------------------------------------------*/
 /*그리드 타이틀과 검색, 필터*/
 .grid-title {
+    width: 100%;
     border-bottom: 1px solid var(--Gray-Gray_2);
     padding: 12px 20px 12px 20px;
     display: flex;
@@ -244,8 +246,6 @@ grid title
 
 }
 .grid-title-wrap {
-    flex-shrink: 0;
-    width: 578.73px;
     height: 30px;
     position: static;
 }
@@ -266,24 +266,10 @@ grid title
 .grid-filter {
     display: flex;
     flex-direction: row;
-    gap: 20px;
     align-items: flex-start;
     justify-content: flex-start;
-    position: absolute;
-    left: 131px;
-    top: 9px;
 }
 /* 상태 등 필터 영역-2*/
-.status-filter {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    position: absolute;
-    left: 131px;
-    top: 9px;
-}
 .status-filter-wrap {
     display: flex;
     flex-direction: row;
@@ -292,6 +278,15 @@ grid title
     justify-content: flex-start;
     flex-shrink: 0;
     position: relative;
+}
+.filter-label{
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: row;
+    padding-left: 30px;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
 
 /* 드롭다운 스타일 */
