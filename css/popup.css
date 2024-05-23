@@ -363,7 +363,7 @@ grid title
 } 
 .search-input {
     flex: 1;
-    padding: 4px;
+    padding: 4px 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     background-image: url('../img/search-x.svg');
