@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제목</title>
+    <link rel="stylesheet" href="css/popup.css">
+    <link rel="stylesheet" href="css/user.css">
+    <style>
+        .container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /*위젯과 충돌발생함. 모달의 위치 중앙정렬 popup.css에서는 주석처리했음*/
+            width: 600px;
+            height: 900px
+        }
+        .p-menu {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+    </style>
+
+</head>
+
+<body>  
+    <div> 
+        <button class="p-menu" onclick="openAlert()">나의 정보, 사용자 등록</button>
+    </div>
+    <div class="overlay" id="overlay"></div>
+    <div class="container" id="c-alert">
+        <header class="header">
+            <div class="header-title">나의 정보</div>
+            <div class="close"><button><img src="img/Close.svg" alt="닫기"></button></div>
+        </header><!--//header-->
+        <section class="content bgc">
+            <span class="roundbox">
+                <span class="roundbox-wrap">
+                    <!--드롭다운 컴포넌트-->
+                    <span class="grid-filter p-component">
+                        <span class="status-filter-wrap input-w">
+                            <label for="status-filter" class="user-label">사용자 구분</label>
+                            <!-- 드롭다운 메뉴 enable -->
+                            <span class="status-dropdown input-w user-z" onclick="toggleDropdown()">
+                                <div class="status-dropdown-text">전체</div>
+                                <img class="status-dropdown-arrow" src="img/dropdown.svg" alt="Dropdown Arrow">
+                                <ul class="status-dropdown-list">
+                                    <li class="status-dropdown-item">Option 1</li>
+                                    <li class="status-dropdown-item">Option 2</li>
+                                    <li class="status-dropdown-item">Option 3</li>
+                                </ul>
+                            </span><!--//status-dropdown-->
+                        </span><!--//status-filter-wrap-->
+                     </span><!--grid-filter-->
+                     <!--//드롭다운 컴포넌트-->
+                    <!--찾기 컴포넌트-->
+                    <span class="grid-filter p-component">
+                        <span class="status-filter-wrap input-w">
+                            <label for="status-filter" class="user-label">소속그룹</label>
+
+                            <!--찾기 컴포넌트의 disable 상태 추가/삭제-->
+                            <!-- <span class="status-dropdown input-w styled-input-d">
+                                <div class="status-dropdown-text">연구소</div>
+                                <img class="status-dropdown-arrow" src="img/icon_file_find.svg" alt="Dropdown Arrow">
+                            </span> -->
+                            <!--//status-dropdown-->
+                            <!--//찾기 컴포넌트의 disable 상태 추가/삭제-->
+
+                            <span class="status-dropdown input-w">
+                                <div class="status-dropdown-text">연구소</div>
+                                <img class="status-dropdown-arrow" src="img/icon_file_find.svg" alt="Dropdown Arrow">
+                            </span><!--//status-dropdown-->
+                        </span><!--//status-filter-wrap-->
+                     </span><!--grid-filter-->
+                     <!--//찾기 컴포넌트-->
+
+                     <!--2단 div-->
+                        <div class="d-flex">
+                            <div>
+                                <!-- enable 컴포넌트-->
+                                <span class="grid-filter p-component">
+                                    <span class="status-filter-wrap input-w">
+                                        <label for="status-filter" class="user-label">사용자명</label>
+                                        <input type="text" class="styled-input">
+                                    </span><!--//status-filter-wrap-->
+                                </span><!--grid-filter-->
+                                <!--// enable 컴포넌트-->
+                                <!-- disable 컴포넌트-->
+                                <span class="grid-filter p-component">
+                                    <span class="status-filter-wrap input-w">
+                                        <label for="status-filter" class="user-label">사번</label>
+                                        <input type="text" class="styled-input styled-input-d">
+                                    </span><!--//status-filter-wrap-->
+                                </span><!--grid-filter-->
+                                <!--// disable  컴포넌트-->
+                                <!-- enable 컴포넌트-->
+                                <span class="grid-filter p-component">
+                                    <span class="status-filter-wrap input-w"> 
+                                        <label for="status-filter" class="user-label">직급</label>
+                                        <!-- 드롭다운 메뉴 enable -->
+                                        <span class="status-dropdown input-w user-z" onclick="toggleDropdown()">
+                                            <div class="status-dropdown-text">전체</div>
+                                            <img class="status-dropdown-arrow" src="img/dropdown.svg" alt="Dropdown Arrow">
+                                            <ul class="status-dropdown-list">
+                                                <li class="status-dropdown-item">Option 1</li>
+                                                <li class="status-dropdown-item">Option 2</li>
+                                                <li class="status-dropdown-item">Option 3</li>
+                                            </ul>
+                                        </span><!--//status-dropdown-->
+                                    </span><!--//status-filter-wrap-->
+                                </span><!--grid-filter-->
+                                <!--// enable  컴포넌트-->
+                                <!-- disable 컴포넌트-->
+                                <span class="grid-filter p-component">
+                                    <span class="status-filter-wrap input-w">
+                                        <label for="status-filter" class="user-label">직급</label>
+                                        <!-- 드롭다운 메뉴 enable -->
+                                        <span class="status-dropdown input-w user-z styled-input-d" onclick="toggleDropdown()">
+                                            <div class="status-dropdown-text s-input-d-t">전체</div>
+                                            <img class="status-dropdown-arrow" src="img/dropdown.svg" alt="Dropdown Arrow">
+                                            <ul class="status-dropdown-list">
+                                                <li class="status-dropdown-item">Option 1</li>
+                                                <li class="status-dropdown-item">Option 2</li>
+                                                <li class="status-dropdown-item">Option 3</li>
+                                            </ul>
+                                        </span><!--//status-dropdown-->
+                                    </span><!--//status-filter-wrap-->
+                                </span><!--grid-filter-->
+                                <!--// disable  컴포넌트-->
+                                <!-- enable 컴포넌트-->
+                                <span class="grid-filter p-component">
+                                    <span class="status-filter-wrap input-w">
+                                        <label for="status-filter" class="user-label">휴대전화</label>
+                                        <input type="text" class="styled-input" placeholder="010-1234-5678 enable">
+                                    </span><!--//status-filter-wrap-->
+                                </span><!--grid-filter-->
+                                <!--// enable  컴포넌트-->
+                                <!-- disable 컴포넌트-->
+                                <span class="grid-filter p-component">
+                                    <span class="status-filter-wrap input-w">
+                                        <label for="status-filter" class="user-label">휴대전화</label>
+                                        <input type="text" class="styled-input styled-input-d" placeholder="010-1234-5678 disable">
+                                    </span><!--//status-filter-wrap-->
+                                </span><!--grid-filter-->
+                                <!--// disable  컴포넌트-->
+                            </div>
+                            <!--프로필-->
+                                <div class="profile">
+                                    <div class="profile-photo">
+                                    <img src="./img/profile.png" alt="Centered Image">
+                                    </div>
+                                    <div class="profile-btn">
+                                        <div class="profile-btn-wrap">
+                                        <button class="profile-btn-1"></button>
+                                        <button class="profile-btn-2"></button>
+                                        </div>
+                                    </div>
+                                </div><!--//profile-->
+                            <!--//프로필-->
+                        </div>
+                     <!--//2단 div-->
+
+                    <!--이메일 컴포넌트-->
+                    <span class="grid-filter p-component">
+                        <span class="status-filter-wrap input-w">
+                            <label for="status-filter" class="user-label">이메일(ID)</label>
+                            <input type="text" class="styled-input" placeholder="여기에 텍스트를 입력하세요.">
+                        </span><!--//status-filter-wrap-->
+                     </span><!--grid-filter-->
+                     <!--//이메일 컴포넌트-->
+                    <!--패스워드 컴포넌트-->
+                    <span class="grid-filter p-component">
+                        <span class="status-filter-wrap input-w">
+                            <label for="status-filter" class="user-label">패스워드</label>
+                            <input type="password" class="styled-input">
+                            <a href="#" class="reset-btn">
+                                <img src="./img/icon_reset.svg" alt="Button Image">
+                            </a>
+                        </span><!--//status-filter-wrap-->
+                     </span><!--grid-filter-->
+                     <!--//패스워드 컴포넌트-->
+                    <!--체크박스 컴포넌트-->
+                    <span class="grid-filter p-component">
+                        <span class="status-filter-wrap input-w">
+                            <label for="status-filter" class="user-label">패스워드</label>
+                            <div class="module-checkboxes">
+                                <!-- 체크박스 3개를 가로로 배열 -->
+                                <div>
+                                    <input type="checkbox" class="custom-checkbox">
+                                    <label for="module1">SET</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" class="custom-checkbox">
+                                    <label for="module2">WM(작업관리)</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" class="custom-checkbox">
+                                    <label for="module3">SM(영업관리)</label>
+                                </div>
+                                <div>
+                                    <input type="checkbox" class="custom-checkbox">
+                                    <label for="module4">AM(경영지원)</label>
+                                </div>
+                            </div>
+                        </span><!--//status-filter-wrap-->
+                     </span><!--grid-filter-->
+                     <!--//체크박스 컴포넌트-->
+                </span><!--//roundbox-wrap-->
+                <!--근무기간-->
+                <div class="section-title">근무 기간</div>
+                <span class="roundbox-wrap">
+                    <span class="grid-filter">
+                        <span class="status-filter-wrap input-w">
+                            <label for="status-filter" class="user-label-2">입사</label>
+                            <span class="status-dropdown">
+                                <div class="status-dropdown-text">오늘</div>
+                                <img class="status-dropdown-arrow" src="img/dropdown.svg" alt="Dropdown Arrow">
+                                <ul class="status-dropdown-list">
+                                    <li class="status-dropdown-item">Option 1</li>
+                                    <li class="status-dropdown-item">Option 2</li>
+                                    <li class="status-dropdown-item">Option 3</li>
+                                </ul>
+                            </span><!--//status-dropdown-->
+                            <input type="text" class="date-input" id="datepicker" name="datepicker" placeholder="2024-05-24">
+                            <span>~</span>
+                            <span class="status-dropdown">
+                                <div class="status-dropdown-text">무기한</div>
+                                <img class="status-dropdown-arrow" src="img/dropdown.svg" alt="Dropdown Arrow">
+                                <ul class="status-dropdown-list">
+                                    <li class="status-dropdown-item">Option 1</li>
+                                    <li class="status-dropdown-item">Option 2</li>
+                                    <li class="status-dropdown-item">Option 3</li>
+                                </ul>
+                            </span><!--//status-dropdown-->
+                            <input type="text" class="date-input-disable" id="datepicker" name="datepicker" placeholder="2024-05-24">
+                        </span><!--//status-filter-wrap-->
+                     </span><!--grid-filter-->
+                </span><!--//roundbox-wrap-->
+                <!--//근무기간-->
+                <!--참고사항-->
+                <div class="section-title">참고사항</div>
+                <textarea class="round-text-area" placeholder="내용을 입력하세요"></textarea>
+                <!--차고사항-->
+            </span><!--//roundbox-->
+        </section>
+        <!--content-->
+        <div class="b-padding">
+            <!--버튼 영역 추가/삭제-->
+            <div class="btn">
+                <!-- <button class="btn-disable">저장</button>  -->
+                <!--disable 상태-->
+                <button class="btn-enable">저장</button>
+                <!--enable 상태-->
+                <button onclick="window.close();">닫기</button>
+            </div>
+        </div>    
+    </div><!--//container-->
+    
+    <script>
+        function openAlert() {
+            document.getElementById('c-alert').style.display = 'flex';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function closeAlert() {
+            document.getElementById('c-alert').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        document.querySelector('.close button').addEventListener('click', closeAlert);
+        // 드롭다운 토글 함수
+        function toggleDropdown() {
+            var dropdown = document.querySelector('.status-dropdown');
+            dropdown.classList.toggle('open');
+        }
+    </script> 
+</body>
+
+</html>
