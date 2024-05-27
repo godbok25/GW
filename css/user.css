@@ -1,0 +1,187 @@
+.roundbox {
+    width: 100%;
+    height: 100vh;
+    flex: 1; 
+    display: flex;
+    border: none;
+    flex-direction: column;
+}
+.roundbox-wrap {
+    width: 100%;
+    padding: 16px 20px;
+    border-radius: 5px;
+    border: 1px solid var(--Gray-Gray_2);
+    box-sizing: border-box;
+    white-space: nowrap; 
+    background: #fff;
+}       
+.input-w {
+    width: 100%;
+    height: 30px;
+}
+.user-label {
+    display: inline-block;
+    min-width: 70px;
+    font-size: 14px;
+    font-weight: 500;
+}
+.user-label-2{
+    width: auto;
+}
+.section-title {
+color: var(--gray-gray6);
+display: flex;
+align-items: center;
+justify-content: flex-start;
+font-size: 16px;
+font-weight: 600;
+padding: 12px 10px 6px 12px;
+line-height: 30px;
+}
+.p-component {
+padding-bottom: 10px;
+}
+/*2단*/
+.d-flex {
+    display: flex;
+    gap: 10px;
+}
+.d-flex > div:first-child {
+    flex: 1; 
+}
+.styled-input, .date-input, .date-input-disable {
+    width: 100%;
+    height: 30px;
+    padding: 3px 12px ;
+    border: 1px solid var(--Gray-Gray_2);
+    border-radius: 5px; 
+    box-sizing: border-box; 
+    font-size: 13px;
+    outline: none; 
+}
+.styled-input-d {
+    border: none;
+    background: var(--Gray-Gray_1);
+    color: var(--Gray-Gray_4);
+}
+.s-input-d-t {
+    color: var(--Gray-Gray_4);
+}
+.round-text-area {
+    width: 100%;
+    height: 108px;
+    padding: 3px 12px;
+    border: 1px solid  var(--Gray-Gray_2); 
+    border-radius: 5px; 
+    box-sizing: border-box; 
+    font-size: 16px; 
+    resize: none; 
+    outline: none; 
+    font-size: 13px;
+
+}
+.user-z {
+    z-index: 1000;
+}
+.date-input, .date-input-disable {
+    width: 120px;
+    background-repeat: no-repeat; 
+    background-position: right 2px center; 
+    cursor: pointer; 
+}
+.date-input {
+    background-image: url('../img/icon_calendar.svg');
+}
+.date-input-disable {
+    background-image: url('../img/calelndar_disable.svg'); 
+    background-color: var(--Gray-Gray_1);
+    border: none;
+}
+.bgc {
+    background-color: #f7f7f9;
+}
+/*프로필*/
+.profile {
+    width: 220px;
+    height: 230px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    overflow: hidden;
+  }
+  .profile-photo {
+    width: 100%;
+    height: 194px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F5F5F5;
+    border-radius: 5px 5px 0 0; 
+  }
+  .profile-photo img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 5px 5px 0 0;
+  }
+  .profile-btn{
+    width: 100%;
+    height: 36px;
+    background-color: #EAEAEA;
+  }
+  .profile-btn-wrap {
+    width: 100%;
+    height: 36px;
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+    border-radius: 0 0 5px 5px; 
+    padding-right: 4px; 
+  }
+  .profile-btn-1, .profile-btn-2 {
+    background-size: auto; 
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    flex-grow: 0; 
+    background-color: #EAEAEA;
+    width: 24px; 
+    height: 100%;
+  }
+  .profile-btn-1 {
+    background-image: url('../img/icon_photo.svg');
+    margin-right: 4px; 
+  }
+  .profile-btn-2 {
+    background-image: url('../img/icon_trash.svg');
+    margin-right: 10px;
+  }
+  /*패스워드-reset-btn*/
+  .reset-btn {
+    background: var(--Blue-blue_6);
+    border-radius: 5px;
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+}
+/*체크박스*/
+.module-checkboxes {
+    display: flex; 
+    gap: 10px; 
+}
+
+.module-checkboxes div {
+    display: flex; 
+    align-items: center;
+    padding-right: 20px;
+}
+.module-checkboxes div:last-child {
+    padding-right: 0px;
+}
+
+.module-checkboxes label {
+    font-size: 13px;
+    font-weight: 400;
+    margin-left: 10px;
