@@ -299,7 +299,9 @@ grid title
     cursor: pointer;
     width: 86px;
 }
-
+.border-n {
+    border: none;
+}
 .status-dropdown-arrow {
     position: absolute;
     top: 50%;
