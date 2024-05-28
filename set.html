@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>제목</title>
+    <link rel="stylesheet" href="css/popup.css">
+    <link rel="stylesheet" href="css/tree_menu.css">
+    <link rel="stylesheet" href="css/set.css">
+    <style>
+        .container {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%); /*위젯과 충돌발생함. 모달의 위치 중앙정렬 popup.css에서는 주석처리했음*/
+            width: 900px;
+            height: 920px
+        }
+        .p-menu {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .items {
+    width: 220px;
+    height: calc(100vh - 168px) ;
+    border-right: 1px solid var(--Gray-Gray_2);
+}
+.items-content {
+    width: 100%;
+}
+.items-title {
+    height: 48px;
+    border-bottom: 1px solid var(--Gray-Gray_2);
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+.items-organization {
+    padding: 16px;
+}
+    </style>
+</head>
+
+<body>  
+    <div> 
+        <button class="p-menu" onclick="openAlert()">공통팝업</button>
+    </div>
+    <div class="overlay" id="overlay"></div>
+    <div class="container" id="c-alert">
+        <header class="header">
+            <div class="header-title">제목</div>
+            <div class="close"><button><img src="img/Close.svg" alt="닫기"></button></div>
+        </header><!--//header-->
+        <section class="content">
+            <!--내용 영역-->
+            <div class="content-wrap">
+                <!--트리메뉴영역 추가/삭제-->
+                <div class="grid-aside">
+                    <!--grid title-->
+                    <div class="grid-title">
+                        <div class="grid-title-text">제목</div>
+                    </div><!--//grid-title-->
+                    <div class="grid-tree">
+                        <!-- 트리메뉴 -->
+                        <div class="tree">
+                            <div class="tree-menu">
+                                <span class="tree_ico"><img src="img/icon_file_open.svg" alt="folder"></span> MENU1
+                            </div>
+                            <ul>
+                                <li class="tree-submenu"><a href=""><span class="tree_ico"><img src="img/icon_document.svg" alt="folder"></span>SUBMENU</a>
+                                </li>
+                                <li class="tree-submenu"><a href=""><span class="tree_ico"><img src="img/icon_document.svg" alt="folder"></span>SUBMENU</a>
+                                </li>
+                                <li class="tree-submenu tree_last_node"><a href=""><span class="tree_ico"><img src="img/icon_document.svg" alt="folder"></span>SUBMENU</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tree">
+                                <div class="tree-menu">
+                                    <span class="tree_ico"><img src="img/icon_file_close.svg" alt="folder"></span> MENU2
+                                </div>
+                        </div>
+                        <div class="tree">
+                            <div class="tree-menu">
+                                <span class="tree_ico"><img src="img/icon_file_open.svg" alt="folder"></span> MENU3
+                            </div>
+                            <ul>
+                                <li class="tree-submenu"><a href=""><span class="tree_ico"><img src="img/icon_document.svg" alt="folder"></span>SUBMENU</a>
+                                </li>
+                                <li class="tree-submenu"><a href=""><span class="tree_ico"><img src="img/icon_document.svg" alt="folder"></span>SUBMENU</a>
+                                </li>
+                                <li class="tree-submenu tree_last_node"><a href=""><span class="tree_ico"><img src="img/icon_document.svg" alt="folder"></span>SUBMENU</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div><!--//grid-tree-->
+                </div><!--//grid-aside-->
+                <div class="grid-content">
+                    <div class="grid-title">
+                        <div class="grid-title-text">제목
+                        </div><!--grid-title-text-->
+                     </div><!--//grid-title-->
+                    <div class="grid-list content">
+                        <!--환경설정 컴포넌트-->
+                        <span class="setbox">
+                            <span class="setbox-wrap">
+                                <!--라디오버튼 컴포넌트-->
+                                <span class="grid-filter">
+                                    <span class="status-filter-wrap p-align">
+                                        <label for="status-filter" class="section-title">패스워드 설정</label>
+                                        <input type="radio"> 사용
+                                        <input type="radio"> 미사용
+                                    </span><!--//status-filter-wrap-->
+                                 </span><!--grid-filter-->
+                                 <!--//라디오버튼 컴포넌트-->                                         
+                                
+                                <!--이메일 컴포넌트-->
+                                <span class="grid-filter p-component">
+                                    <span class="status-filter-wrap">
+                                        <label for="status-filter" class="user-label p-component-left">기본 패스워드</label>
+                                        <input type="password" class="set-p-input">
+                                    </span><!--//status-filter-wrap-->
+                                 </span><!--grid-filter-->
+                                 <!--//이메일 컴포넌트-->
+        
+                            </span><!--//roundbox-wrap-->
+                            <!--근무기간-->
+                            <div class="checkbox-wrap">
+                                <input type="checkbox" class="custom-checkbox">
+                                <label for="module4" class="custom-checkbox-text">패스워드 복잡성</label>
+                            </div>
+                            <span class="roundbox-wrap">
+                                <span class="grid-filter">
+                                    <span class="status-filter-wrap input-w">
+                                        <input type="checkbox" class="custom-checkbox">
+                                        <label for="status-filter" class="user-label-2">특수문자: 최소</label>
+                                        <input type="text" class="date-input-disable" id="datepicker" name="datepicker" placeholder="1">
+                                    </span><!--//status-filter-wrap-->
+                                 </span><!--grid-filter-->
+                            </span><!--//roundbox-wrap-->
+                            <!--//근무기간-->
+                            <!--제어옵션-->
+                            <div class="section-title">제어옵션</div>
+                            <div class="p-component-left">
+                                <input type="checkbox" class="custom-checkbox">
+                                <label for="module4">기본 패스워드 변경 (첫 로그인 시 무조건 변경)</label>
+                            </div>
+                            <!--제어옵션-->
+                        </span><!--//roundbox-->
+                        <!--//환경설정 컴포넌트-->
+                    </div><!--//grid-list-->       
+                </div>
+                <!--//grid-content-->
+            </div><!--//content-wrap-->
+        </section>
+        <!--content-->
+        <div class="b-padding">
+            <!--버튼 영역 추가/삭제-->
+            <div class="btn">
+                <!-- <button class="btn-disable">저장</button>  -->
+                <!--disable 상태-->
+                <button class="btn-enable">저장</button>
+                <!--enable 상태-->
+                <button onclick="window.close();">닫기</button>
+            </div>
+        </div>    
+    </div><!--//container-->
+    
+    <script>
+        function openAlert() {
+            document.getElementById('c-alert').style.display = 'flex';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function closeAlert() {
+            document.getElementById('c-alert').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+
+        document.querySelector('.close button').addEventListener('click', closeAlert);
+        // 드롭다운 토글 함수
+        function toggleDropdown() {
+            var dropdown = document.querySelector('.status-dropdown');
+            dropdown.classList.toggle('open');
+        }
+    </script> 
+</body>
+
+</html>
